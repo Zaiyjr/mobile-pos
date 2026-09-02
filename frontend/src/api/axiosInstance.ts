@@ -1,7 +1,8 @@
 import axios from "axios";
 
 const API = axios.create({
-  baseURL: "http://localhost:5000/api", // ປ່ຽນພອດໃຫ້ຕົງກັບຫຼັງບ້ານຂອງເຈົ້າເດີ້
+  baseURL: import.meta.env.VITE_API_URL || "http://localhost:5000",
+  
 });
 
 // ແນບ Token ເຂົ້າໄປໃນ Header ທຸກຄັ້ງທີ່ຍິງ API

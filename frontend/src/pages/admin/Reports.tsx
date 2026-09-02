@@ -7,9 +7,31 @@ import { Button } from "@/components/ui/button";
 
 type FilterType = "month" | "year" | "custom";
 
+type ReportOrderItem = {
+  quantity: number;
+  priceAtTime?: number | string | null;
+  variantId?: number | string;
+  variant?: {
+    product?: {
+      name?: string;
+    };
+  };
+};
+
+type ReportOrder = {
+  createdAt: string;
+  totalAmount: number | string;
+  items?: ReportOrderItem[];
+};
+
+type ChartDataPoint = {
+  label: string;
+  total: number;
+};
+
 export default function Reports() {
   const [loading, setLoading] = useState(true);
-  const [orders, setOrders] = useState<any[]>([]);
+  const [orders, setOrders] = useState<ReportOrder[]>([]);
   const [filter, setFilter] = useState<FilterType>("month");
 
   // 💡 ຕັ້ງຄ່າເວລາປັດຈຸບັນ (ປີປັດຈຸບັນແມ່ນ 2026)
@@ -52,8 +74,8 @@ export default function Reports() {
 
   // 💡 2. ຄຳນວນຂໍ້ມູນ ແລະ ຈັດກຸ່ມກຣາຟໃຫ້ສວຍງາມ
   const filteredData = useMemo(() => {
-    let filteredOrders = [];
-    let chartData = [];
+    let filteredOrders: ReportOrder[] = [];
+    let chartData: ChartDataPoint[] = [];
     const laosMonths = ["ມັງກອນ", "ກຸມພາ", "ມີນາ", "ເມສາ", "ພຶດສະພາ", "ມິຖຸນາ", "ກໍລະກົດ", "ສິງຫາ", "ກັນຍາ", "ຕຸລາ", "ພະຈິກ", "ທັນວາ"];
 
     if (filter === "month") {
@@ -111,7 +133,7 @@ export default function Reports() {
     // ຄຳນວນສິນຄ້າທີ່ຂາຍໄດ້ທັງໝົດໃນຊ່ວງເວລານັ້ນ
     const itemMap = new Map<string, { quantity: number; revenue: number }>();
     filteredOrders.forEach(o => {
-      o.items?.forEach((item: any) => {
+      o.items?.forEach((item) => {
         const name = item.variant?.product?.name || `ສິນຄ້າ (Variant ID: ${item.variantId})`;
         const current = itemMap.get(name) || { quantity: 0, revenue: 0 };
         itemMap.set(name, {
