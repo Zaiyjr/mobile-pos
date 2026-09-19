@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>User Interview Workflow</title>
+  <style>
+    :root { --ink:#172033; --muted:#63718a; --bg:#f5f8fc; --card:#fff; --blue:#2563eb; --green:#07835b; --line:#dbe4ee; --soft:#ecf3ff; }
+    * { box-sizing:border-box; }
+    body { margin:0; background:var(--bg); color:var(--ink); font-family:system-ui,-apple-system,"Noto Sans Thai",sans-serif; line-height:1.6; }
+    main { max-width:1000px; margin:auto; padding:46px 20px 74px; }
+    header { background:linear-gradient(135deg,#173f97,#2563eb); border-radius:24px; color:#fff; padding:38px; }
+    h1 { margin:0 0 10px; font-size:clamp(31px,6vw,48px); line-height:1.15; }
+    h2 { margin:0 0 9px; font-size:23px; }
+    h3,p { margin:0; }
+    .lead { font-size:18px; opacity:.92; max-width:700px; }
+    .section { margin-top:28px; }
+    .steps { display:grid; gap:13px; }
+    .step { display:grid; grid-template-columns:54px 1fr; gap:16px; background:var(--card); border:1px solid var(--line); border-radius:17px; padding:20px; }
+    .num { width:38px; height:38px; display:grid; place-items:center; border-radius:50%; background:var(--soft); color:var(--blue); font-weight:800; }
+    .muted { color:var(--muted); margin-top:4px; }
+    .grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:16px; }
+    .card { background:var(--card); border:1px solid var(--line); border-radius:17px; padding:22px; }
+    ul { margin:9px 0 0; padding-left:22px; }
+    .questions { background:#fffdf4; border-color:#eadfb7; }
+    .chain { background:#ecfdf5; border:1px solid #a9e8cc; border-radius:18px; padding:23px; }
+    .chain span { display:inline-block; margin:5px 4px 5px 0; padding:7px 10px; background:#fff; border:1px solid #ccebdc; border-radius:9px; font-weight:650; }
+    .usecase { border-left:5px solid var(--green); }
+    @media(max-width:650px){ main{padding:25px 14px 50px}header{padding:27px}.grid{grid-template-columns:1fr}.step{grid-template-columns:42px 1fr;padding:17px} }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <h1>User Interview Workflow</h1>
+      <p class="lead">ใช้ซ้ำทุก project. SaaS, e-commerce, internal tool. เริ่มจาก user และงานจริงก่อน feature, UI, code.</p>
+    </header>
+
+    <section class="section steps">
+      <article class="step"><span class="num">1</span><div><h2>เลือก project และคำถามเดียว</h2><p class="muted">เช่น ร้านค้า: ยอดขายรายวันคือปัญหาแรกไหม? E-commerce: ลูกค้าทิ้ง checkout เพราะอะไร?</p></div></article>
+      <article class="step"><span class="num">2</span><div><h2>เลือก user ที่เพิ่งทำงานนี้จริง</h2><p class="muted">เริ่ม 3–5 คน. ถ้าธีมยังใหม่ ให้สัมภาษณ์ต่อ.</p></div></article>
+      <article class="step"><span class="num">3</span><div><h2>ถามเรื่องครั้งล่าสุด</h2><p class="muted">ให้ user เล่า trigger, ขั้นตอน, เครื่องมือ, ปัญหา, workaround, ผลลัพธ์.</p></div></article>
+      <article class="step"><span class="num">4</span><div><h2>แยก fact ออกจากความคิด</h2><p class="muted">Quote และสิ่งที่เห็น = evidence. สิ่งที่ทีมสรุป = interpretation.</p></div></article>
+      <article class="step"><span class="num">5</span><div><h2>หา pattern</h2><p class="muted">รวม pain, workflow, user type, desired outcome จากหลาย interview.</p></div></article>
+      <article class="step"><span class="num">6</span><div><h2>สร้าง MVP จาก evidence</h2><p class="muted">Problem, outcome, requirements, DDD, technical plan, UI, test.</p></div></article>
+    </section>
+
+    <section class="section grid">
+      <article class="card questions">
+        <h2>คำถามหลัก</h2>
+        <ul>
+          <li>ครั้งล่าสุดทำงานนี้เมื่อไร?</li>
+          <li>ทำทีละขั้นอย่างไร?</li>
+          <li>ตรงไหนช้า ผิด หรือสับสน?</li>
+          <li>ตอนนี้แก้อย่างไร?</li>
+          <li>ผลลัพธ์ไหนสำคัญสุด?</li>
+        </ul>
+      </article>
+      <article class="card">
+        <h2>ห้ามเริ่มแบบนี้</h2>
+        <ul>
+          <li>“อยากได้ feature อะไร?”</li>
+          <li>“ถ้าสร้างแล้วจะใช้ไหม?”</li>
+          <li>เอา insight project หนึ่ง ไปฟันธงอีก project</li>
+        </ul>
+      </article>
+    </section>
+
+    <section class="section chain">
+      <h2>จาก User สู่ Product</h2>
+      <span>Interview evidence</span><span>Problem</span><span>Outcome</span><span>Requirements</span><span>DDD</span><span>Technical plan</span><span>UI</span><span>Test</span>
+    </section>
+
+    <section class="section card usecase">
+      <h2>Use case ปัจจุบัน: ระบบบันทึกยอดขายร้านเล็ก</h2>
+      <p>เริ่มจากร้านผลไม้ของแม่. เรียนรู้การขายจริง การจดกระดาษ การรวมยอด และข้อผิดพลาด. แล้วคุยกับร้านอื่นในกลุ่มเดียวกัน ก่อนตัดสินใจ MVP.</p>
+    </section>
+
+    <section class="section card">
+      <h2>ใช้กับ project อื่น</h2>
+      <p>เก็บ research index กลาง. แยก project, user, interview date, evidence, theme, decision. ใช้ insight ซ้ำได้เมื่อ user, task, context, problem เหมือนกันเท่านั้น.</p>
+    </section>
+  </main>
+</body>
+</html>

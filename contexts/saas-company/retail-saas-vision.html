@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ระบบบันทึกยอดขายสำหรับร้านเล็ก</title>
+  <style>
+    :root { --ink:#172033; --muted:#5d687a; --bg:#f6f8fb; --card:#fff; --line:#dce3ec; --blue:#2563eb; --green:#087f5b; --soft:#eaf2ff; }
+    * { box-sizing:border-box; }
+    body { margin:0; font-family:system-ui,-apple-system,"Noto Sans Thai",sans-serif; color:var(--ink); background:var(--bg); line-height:1.55; }
+    main { max-width:980px; margin:auto; padding:48px 20px 72px; }
+    .hero { background:linear-gradient(135deg,#183b85,#2563eb); color:#fff; border-radius:24px; padding:42px; }
+    h1 { margin:0 0 12px; font-size:clamp(30px,5vw,48px); line-height:1.15; }
+    h2 { margin:0 0 12px; font-size:25px; }
+    h3 { margin:0 0 8px; font-size:18px; }
+    p { margin:0; }
+    .lead { max-width:650px; font-size:18px; opacity:.92; }
+    .section { margin-top:28px; }
+    .grid { display:grid; gap:16px; grid-template-columns:repeat(2,minmax(0,1fr)); }
+    .card { background:var(--card); border:1px solid var(--line); border-radius:18px; padding:22px; box-shadow:0 4px 18px #1720330a; }
+    .bad { border-left:5px solid #d9485f; }
+    .good { border-left:5px solid var(--green); }
+    .flow { display:grid; gap:10px; grid-template-columns:repeat(4,minmax(0,1fr)); }
+    .step { background:var(--soft); border-radius:14px; padding:16px; text-align:center; font-weight:650; }
+    .step small { display:block; margin-top:5px; color:var(--muted); font-weight:400; }
+    .mvp { background:#ecfdf5; border:1px solid #a7e9cb; }
+    ul { margin:10px 0 0; padding-left:22px; }
+    .note { color:var(--muted); margin-top:10px; }
+    .tag { display:inline-block; margin-top:12px; padding:5px 10px; background:#dbeafe; color:#1748ae; border-radius:999px; font-size:14px; font-weight:650; }
+    @media (max-width:650px) { main{padding:24px 14px 48px}.hero{padding:28px}.grid,.flow{grid-template-columns:1fr}.step{text-align:left} }
+  </style>
+</head>
+<body>
+  <main>
+    <section class="hero">
+      <h1>ระบบบันทึกยอดขาย<br>สำหรับร้านเล็ก</h1>
+      <p class="lead">ช่วยร้านค้าที่จดขายลงกระดาษ รู้รายรับของวันนี้ทันที ใช้ง่าย ราคาเริ่มต้นฟรี</p>
+    </section>
+
+    <section class="section grid">
+      <article class="card bad">
+        <h2>ปัญหาวันนี้</h2>
+        <p>ร้านเล็กหลายร้านจดขายในกระดาษ</p>
+        <ul>
+          <li>รวมยอดเงินตอนปิดร้านเอง</li>
+          <li>รู้ยอดช้า</li>
+          <li>ตัวเลขผิดง่าย</li>
+          <li>ดูย้อนหลังยาก</li>
+        </ul>
+      </article>
+      <article class="card good">
+        <h2>สิ่งที่ระบบช่วย</h2>
+        <p>บันทึกยอดขายระหว่างวัน แล้วเห็นยอดรวมทันที</p>
+        <ul>
+          <li>รู้รายรับวันนี้</li>
+          <li>ดูยอดวันก่อน</li>
+          <li>ลดการบวกเลขจากกระดาษ</li>
+          <li>เริ่มใช้ได้ฟรี</li>
+        </ul>
+      </article>
+    </section>
+
+    <section class="section">
+      <h2>ระบบนี้สร้างเพื่อใคร</h2>
+      <div class="card">
+        <h3>ร้านค้าขนาดเล็กหลายร้าน</h3>
+        <p>ร้านผลไม้ ร้านขายของชำ ร้านอาหารเล็ก หรือร้านอื่นที่มีปัญหาเดียวกัน: ขายของแล้วไม่รู้รายรับแต่ละวันชัดเจน</p>
+        <span class="tag">แม่ของผู้สร้าง = ร้านแรกที่ใช้เรียนรู้ปัญหาจริง</span>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>MVP เริ่มต้น</h2>
+      <div class="flow mvp">
+        <div class="step">1. เปิดวันขาย<small>เริ่มทำงาน</small></div>
+        <div class="step">2. บันทึกยอดขาย<small>ใส่เงินที่ขายได้</small></div>
+        <div class="step">3. เห็นยอดวันนี้<small>รวมอัตโนมัติ</small></div>
+        <div class="step">4. ปิดวันขาย<small>ดูสรุป</small></div>
+      </div>
+      <p class="note">เริ่มจากปัญหาเดียวให้ดี: บันทึกขายง่าย และรู้รายรับวันนี้ทันที</p>
+    </section>
+
+    <section class="section grid">
+      <article class="card">
+        <h2>ของที่ทำก่อน</h2>
+        <ul>
+          <li>บันทึกยอดขาย</li>
+          <li>แก้ไขหรือยกเลิกรายการ</li>
+          <li>ยอดรวมรายวัน</li>
+          <li>ประวัติรายวัน</li>
+          <li>แยกข้อมูลแต่ละร้าน</li>
+        </ul>
+      </article>
+      <article class="card">
+        <h2>ของที่ทำทีหลัง</h2>
+        <ul>
+          <li>สต๊อกสินค้า</li>
+          <li>รายชื่อ supplier</li>
+          <li>บัญชีเต็มรูปแบบ</li>
+          <li>หลายสาขา</li>
+          <li>รายงานซับซ้อน</li>
+        </ul>
+      </article>
+    </section>
+
+    <section class="section card">
+      <h2>ทางเดินสร้างผลิตภัณฑ์</h2>
+      <div class="flow">
+        <div class="step">ฟังร้านค้า<small>ปัญหาจริง</small></div>
+        <div class="step">เลือก MVP<small>แก้หนึ่งปัญหา</small></div>
+        <div class="step">สร้างและทดลอง<small>ใช้กับหลายร้าน</small></div>
+        <div class="step">ขยายระบบ<small>เมื่อมีหลักฐาน</small></div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

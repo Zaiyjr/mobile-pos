@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="th">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Nova Stack — Phase 1 Operating Hub</title>
+    <style>
+      :root { --blue:#1d4ed8; --sky:#0ea5e9; --navy:#0f172a; --ink:#334155; --canvas:#f6f9ff; --card:#fff; --line:#dbe5f3; --green:#16a34a; --amber:#d97706; }
+      * { box-sizing:border-box; } body { margin:0; color:var(--navy); background:var(--canvas); font:15px/1.55 "Noto Sans", system-ui, sans-serif; }
+      .shell { display:grid; min-height:100vh; grid-template-columns:250px 1fr; }
+      aside { padding:28px 18px; color:#fff; background:linear-gradient(180deg,#1d4ed8,#173da5); }
+      .brand { font-weight:800; font-size:22px; letter-spacing:-.5px; } .brand small { display:block; margin-top:3px; color:#bfdbfe; font-size:11px; letter-spacing:1.2px; }
+      nav { display:grid; gap:8px; margin-top:42px; } nav a { padding:11px 12px; border-radius:10px; color:#dbeafe; text-decoration:none; } nav a:first-child { color:#fff; background:rgba(255,255,255,.16); font-weight:700; }
+      .team-note { margin-top:42px; padding:14px; border:1px solid rgba(255,255,255,.2); border-radius:12px; background:rgba(15,23,42,.17); color:#dbeafe; font-size:13px; }
+      main { max-width:1440px; width:100%; padding:34px clamp(22px,4vw,64px) 64px; }
+      .top { display:flex; align-items:flex-start; justify-content:space-between; gap:24px; } h1 { margin:0; font-size:clamp(27px,4vw,40px); line-height:1.16; letter-spacing:-1.5px; } .lede { margin:10px 0 0; color:var(--ink); max-width:700px; } .badge { padding:8px 12px; border-radius:999px; color:#1e40af; background:#dbeafe; font-weight:700; white-space:nowrap; }
+      .kpis { display:grid; grid-template-columns:repeat(4,1fr); gap:16px; margin:30px 0; }.card { border:1px solid var(--line); border-radius:16px; background:var(--card); box-shadow:0 8px 25px rgba(30,64,175,.05); }.kpi { padding:19px; }.kpi b { display:block; margin-top:7px; font-size:25px; }.muted { color:#64748b; font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:.5px; }
+      .grid { display:grid; grid-template-columns:1.15fr .85fr; gap:20px; }.section { padding:24px; }.section h2 { margin:0 0 18px; font-size:18px; }.teams { display:grid; grid-template-columns:repeat(2,1fr); gap:11px; }.team { padding:14px; border:1px solid var(--line); border-radius:12px; }.team b { display:block; }.team span { color:#64748b; font-size:13px; }
+      .flow { display:grid; gap:0; }.step { position:relative; display:grid; grid-template-columns:34px 1fr; gap:12px; padding:0 0 16px; }.step:not(:last-child)::after { position:absolute; left:16px; top:34px; width:2px; height:calc(100% - 16px); background:#bfdbfe; content:""; }.dot { display:grid; place-items:center; width:32px; height:32px; border-radius:50%; color:#fff; background:var(--blue); font-size:12px; font-weight:800; }.step b { display:block; }.step p { margin:2px 0 0; color:#64748b; font-size:13px; }
+      .wide { margin-top:20px; }.scenario { display:grid; grid-template-columns:1.2fr .8fr; gap:20px; }.goal { padding:22px; color:#fff; border-radius:14px; background:linear-gradient(135deg,#1d4ed8,#0ea5e9); }.goal h3 { margin:0 0 8px; font-size:22px; }.scenario ol { margin:0; padding-left:22px; }.scenario li { margin:8px 0; }
+      .cadence { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; }.cadence div { padding:14px; border-left:3px solid var(--sky); background:#f8fbff; }.cadence b { display:block; font-size:13px; }
+      @media (max-width:900px) { .shell { grid-template-columns:1fr; } aside { padding:18px 22px; } nav { display:flex; overflow:auto; margin-top:18px; } .team-note { display:none; } .kpis,.scenario { grid-template-columns:repeat(2,1fr); } .grid { grid-template-columns:1fr; } }
+      @media (max-width:560px) { main { padding:24px 16px 40px; } .top,.scenario { display:block; }.badge { display:inline-block; margin-top:16px; }.kpis,.teams,.cadence { grid-template-columns:1fr; } }
+    </style>
+  </head>
+  <body>
+    <div class="shell">
+      <aside>
+        <div class="brand">NOVA STACK <small>SAAS COMPANY SIMULATION</small></div>
+        <nav><a href="#overview">ພາບລວມ / Overview</a><a href="#teams">Teams</a><a href="#workflow">Delivery workflow</a><a href="#scenario">Phase 1 scenario</a></nav>
+        <div class="team-note"><b>Core Platform Squad</b><br />Product · Engineering · Design · QA · Customer Success</div>
+      </aside>
+      <main id="overview">
+        <header class="top"><div><h1>บริษัท IT & Software<br />ที่สร้าง SaaS อย่างเป็นระบบ</h1><p class="lede">Phase 1 จำลอง Nova Stack: บริษัทที่ค้นหาปัญหาลูกค้า วาง roadmap ส่งมอบ release และวัดผลการใช้งานจริงร่วมกัน</p></div><span class="badge">Phase 1 · Internal operating model</span></header>
+        <section class="kpis" aria-label="Phase one goals"><div class="card kpi"><span class="muted">Teams</span><b>7</b><span>functional teams</span></div><div class="card kpi"><span class="muted">Delivery unit</span><b>1 Squad</b><span>Core Platform</span></div><div class="card kpi"><span class="muted">Sprint cycle</span><b>2 weeks</b><span>goal-driven delivery</span></div><div class="card kpi"><span class="muted">First outcome</span><b>Portal</b><span>customer self-service</span></div></section>
+        <section class="grid"><article class="card section" id="teams"><h2>โครงสร้างบริษัท</h2><div class="teams"><div class="team"><b>Leadership</b><span>CEO, COO, Head of Product</span></div><div class="team"><b>Product</b><span>PM, Business Analyst</span></div><div class="team"><b>Engineering</b><span>Tech Lead, Backend, Frontend, Flutter</span></div><div class="team"><b>Design & QA</b><span>Product Designer, QA Engineer</span></div><div class="team"><b>Customer Success</b><span>CSM, Support Agent</span></div><div class="team"><b>Commercial</b><span>Sales, Finance</span></div></div></article><article class="card section" id="workflow"><h2>Delivery workflow</h2><div class="flow"><div class="step"><span class="dot">1</span><div><b>Customer signal</b><p>ปัญหา, คำถาม และ feedback จากลูกค้า</p></div></div><div class="step"><span class="dot">2</span><div><b>Discovery & roadmap</b><p>Product นิยาม outcome และจัดลำดับความสำคัญ</p></div></div><div class="step"><span class="dot">3</span><div><b>Sprint delivery</b><p>Squad สร้าง, review และจัดการ blocker</p></div></div><div class="step"><span class="dot">4</span><div><b>QA & release</b><p>ผ่าน quality gate ก่อน deploy และสื่อสารลูกค้า</p></div></div><div class="step"><span class="dot">5</span><div><b>Adoption review</b><p>วัดผลการใช้งานและนำ insight กลับสู่ roadmap</p></div></div></div></article></section>
+        <section class="card section wide" id="scenario"><div class="scenario"><div class="goal"><h3>Scenario แรก: Customer Self-Service Portal</h3><p>เป้าหมาย: ลูกค้าดูสถานะงาน, invoice และส่ง support request ได้ด้วยตัวเอง</p><b>Success metric: 50% ของ active customers ใช้งานภายใน 30 วัน</b></div><div><h2>งานของ Core Platform Squad</h2><ol><li>Product นิยาม acceptance criteria</li><li>Design ทดสอบ customer flow</li><li>Engineering สร้าง portal</li><li>QA ตรวจ role boundary และ regression</li><li>CSM ปล่อย pilot และวัด adoption</li></ol></div></div></section>
+        <section class="card section wide"><h2>จังหวะการทำงาน</h2><div class="cadence"><div><b>Daily</b>15 นาที · sync blocker และ delivery focus</div><div><b>Biweekly</b>Sprint planning, demo และ retrospective</div><div><b>Monthly</b>Review metrics, roadmap, customer risk และ commercial health</div></div></section>
+      </main>
+    </div>
+  </body>
+</html>

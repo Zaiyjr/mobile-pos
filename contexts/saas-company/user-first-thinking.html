@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>คิดแบบ User ก่อน Code</title>
+  <style>
+    :root { --ink:#162137; --muted:#60708a; --bg:#f5f8fc; --card:#fff; --blue:#2563eb; --red:#c44259; --green:#07835b; --line:#dce4ef; }
+    * { box-sizing:border-box; }
+    body { margin:0; background:var(--bg); color:var(--ink); font-family:system-ui,-apple-system,"Noto Sans Thai",sans-serif; line-height:1.6; }
+    main { max-width:980px; margin:auto; padding:46px 20px 70px; }
+    header { text-align:center; max-width:720px; margin:0 auto 34px; }
+    h1 { font-size:clamp(31px,6vw,49px); line-height:1.15; margin:0 0 12px; }
+    h2 { margin:0 0 10px; font-size:24px; }
+    p { margin:0; }
+    .sub { color:var(--muted); font-size:18px; }
+    .grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:16px; }
+    .card { background:var(--card); border:1px solid var(--line); border-radius:18px; padding:24px; box-shadow:0 4px 18px #1720330a; }
+    .code { border-top:5px solid var(--red); }
+    .user { border-top:5px solid var(--green); }
+    .label { font-size:14px; font-weight:750; color:var(--muted); text-transform:uppercase; letter-spacing:.06em; }
+    .big { margin-top:8px; font-size:21px; font-weight:720; line-height:1.42; }
+    .section { margin-top:28px; }
+    .question { display:grid; grid-template-columns:42px 1fr; gap:14px; align-items:start; padding:18px; border-bottom:1px solid var(--line); }
+    .question:last-child { border:0; }
+    .number { width:34px; height:34px; background:#e7efff; color:#1f55d5; display:grid; place-items:center; border-radius:50%; font-weight:800; }
+    .quote { background:linear-gradient(135deg,#1744a6,#2563eb); color:#fff; border-radius:20px; padding:30px; font-size:21px; }
+    table { width:100%; border-collapse:collapse; background:#fff; border:1px solid var(--line); border-radius:18px; overflow:hidden; }
+    th,td { padding:15px; text-align:left; border-bottom:1px solid var(--line); vertical-align:top; }
+    th { background:#eff5ff; }
+    tr:last-child td { border:0; }
+    .check { background:#ecfdf5; border:1px solid #a6e8ca; border-radius:18px; padding:24px; }
+    .check p { font-size:19px; font-weight:650; }
+    @media(max-width:650px) { main{padding:28px 14px 50px}.grid{grid-template-columns:1fr}.card{padding:20px}th,td{padding:12px;font-size:14px} }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <h1>คิดแบบ User<br>ก่อนเขียน Code</h1>
+      <p class="sub">User เริ่มจากปัญหา ไม่เริ่มจาก database หรือหน้า dashboard</p>
+    </header>
+
+    <section class="grid">
+      <article class="card code">
+        <p class="label">มุม Developer</p>
+        <p class="big">“จะสร้าง feature อะไรดี?”</p>
+        <p>คิดถึง API, database, หน้าเว็บ, stack</p>
+      </article>
+      <article class="card user">
+        <p class="label">มุม User</p>
+        <p class="big">“ตอนนี้ฉันติดอะไร?”</p>
+        <p>คิดถึงงานจริง เวลา ความผิดพลาด และผลที่อยากได้</p>
+      </article>
+    </section>
+
+    <section class="section quote">
+      ตอนปิดร้าน แม่อยากรู้เงินวันนี้<br>
+      แต่ต้องนั่งบวกกระดาษเอง
+    </section>
+
+    <section class="section card">
+      <h2>ถาม 5 ข้อก่อนสร้าง feature</h2>
+      <div class="question"><span class="number">1</span><div><strong>User คือใคร?</strong><br>เช่น เจ้าของร้านเล็ก</div></div>
+      <div class="question"><span class="number">2</span><div><strong>User กำลังทำอะไร?</strong><br>เช่น ปิดร้านและรวมยอดขาย</div></div>
+      <div class="question"><span class="number">3</span><div><strong>จุดไหนลำบาก?</strong><br>เช่น ต้องบวกกระดาษเอง ยอดอาจผิด</div></div>
+      <div class="question"><span class="number">4</span><div><strong>ตอนนี้แก้อย่างไร?</strong><br>เช่น จดลงสมุดแล้วคำนวณทีหลัง</div></div>
+      <div class="question"><span class="number">5</span><div><strong>หลังใช้ระบบ ต้องได้อะไร?</strong><br>เช่น เห็นรายรับวันนี้ทันที</div></div>
+    </section>
+
+    <section class="section">
+      <h2>แปล User Need เป็น Code</h2>
+      <table>
+        <thead><tr><th>สิ่งที่ Developer คิด</th><th>สิ่งที่ User ได้</th></tr></thead>
+        <tbody>
+          <tr><td>สร้าง <code>Sales</code> table</td><td>บันทึกเงินขายได้</td></tr>
+          <tr><td>สร้าง dashboard</td><td>รู้ยอดขายวันนี้</td></tr>
+          <tr><td>สร้าง edit API</td><td>แก้ยอดที่ใส่ผิดได้</td></tr>
+          <tr><td>สร้าง authentication</td><td>ข้อมูลแต่ละร้านไม่ปนกัน</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="section card">
+      <h2>User Story</h2>
+      <p class="big">ในฐานะเจ้าของร้านเล็ก<br>ฉันต้องการบันทึกยอดขายทันทีหลังขาย<br>เพื่อรู้รายรับของวันนี้ โดยไม่ต้องบวกกระดาษเอง</p>
+    </section>
+
+    <section class="section check">
+      <h2>เช็กก่อนเขียน Code</h2>
+      <p>User ทำอะไรได้ดีขึ้นหลัง feature นี้?</p>
+      <p>ตอบไม่ได้: กลับไปฟัง User ก่อน</p>
+    </section>
+  </main>
+</body>
+</html>
