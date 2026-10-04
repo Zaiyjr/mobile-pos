@@ -1,6 +1,6 @@
 # ADR-0001: Use NestJS for backend-v2
 
-- **Status:** Accepted
+- **Status:** Superseded by [ADR-0004](0004-express-mobile-shop-architecture.md)
 - **Date:** 2026-09-19
 - **Decision owner:** Product/Engineering
 
@@ -43,4 +43,3 @@ Costs and risks:
 - NestJS does not automatically prevent shallow modules or misplaced business logic.
 - The team must enforce domain boundaries through review and tests.
 - backend-v2 temporarily creates a second backend surface during migration.
-

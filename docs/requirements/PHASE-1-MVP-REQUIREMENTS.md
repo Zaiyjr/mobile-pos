@@ -2,7 +2,7 @@
 
 **Product:** General Retail Sales SaaS  
 **Backend:** `backend-v2` with NestJS + TypeScript  
-**Status:** Approved scope for planning; implementation has not started  
+**Status:** Superseded by [ADR-0004](../adr/0004-express-mobile-shop-architecture.md)
 **Date:** 2026-09-19  
 **Source:** Confirmed design decisions from the product/BA interview in this task
 
@@ -419,4 +419,3 @@ Targets must be agreed with the pilot merchant after a baseline observation. Do 
 4. Agree retention, backup, availability, and recovery targets after estimating pilot volume.
 5. Decide whether RLS is required before the first external pilot or whether application scoping plus integration tests is the temporary release gate.
 6. Define the exact Supabase provisioning recovery flow when Auth succeeds but Workspace creation fails.
-

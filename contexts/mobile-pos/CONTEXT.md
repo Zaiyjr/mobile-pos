@@ -1,4 +1,6 @@
-# General Retail Sales Context — Ubiquitous Language
+# Mobile Shop POS Context — Superseded Planning Note
+
+> This file contains earlier general-retail planning language. The current mobile-shop product scope and Express architecture are recorded in [ADR-0004](../../docs/adr/0004-express-mobile-shop-architecture.md).
 
 This context describes the general-retail MVP. It is separate from the Company's delivery language, where `Product` means a SaaS offering.
 
@@ -29,4 +31,3 @@ This context describes the general-retail MVP. It is separate from the Company's
 - A Sale Item retains the price that applied at the time of sale.
 - `OWNER/ADMIN` is required for stock adjustment and Sale cancellation.
 - Product-facing language uses `Workspace`; `tenantId` is an infrastructure/database term.
-

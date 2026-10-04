@@ -2,6 +2,6 @@
 
 | Context | Purpose | Location |
 | --- | --- | --- |
-| General Retail Sales | General-retail MVP domain and backend-v2 planning language | `contexts/mobile-pos/` |
-| Legacy Mobile POS | Existing retail and point-of-sale implementation being replaced | `backend/src/modules/` |
+| Mobile Shop POS | Current mobile-shop domain and point-of-sale implementation | `backend/src/modules/` and `frontend/src/features/` |
+| Superseded General Retail Planning | Earlier general-retail MVP planning; no longer the active product scope | `docs/requirements/PHASE-1-MVP-REQUIREMENTS.md`, `docs/adr/0001-nestjs-backend-v2.md`, `docs/adr/0002-general-retail-mvp-domain.md` |
 | SaaS Company Simulation | Internal operating model for a software company that builds and delivers SaaS | `contexts/saas-company/` |

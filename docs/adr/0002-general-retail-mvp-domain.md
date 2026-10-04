@@ -1,6 +1,6 @@
 # ADR-0002: Use simple Retail Products and Stock Movements for the MVP
 
-- **Status:** Accepted
+- **Status:** Superseded by [ADR-0004](0004-express-mobile-shop-architecture.md)
 - **Date:** 2026-09-19
 - **Decision owner:** Product/Engineering
 
@@ -33,4 +33,3 @@ Costs and risks:
 - A pilot that sells by weight or requires variants may need a scope change.
 - Product quantity is whole-number by default; fractional units remain an open pilot decision.
 - Barcode scanning is deferred and may later require a catalog identifier decision.
-
